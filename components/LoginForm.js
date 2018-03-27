@@ -5,7 +5,7 @@ import { View, Text } from 'react-native';
 
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 
-import { Header, Button, Card, CardSection, Input, Spinner } from './common';
+import { Button, Card, CardSection, Input, Spinner } from './common';
 
 const styles = {
   errorTextStyle: {
@@ -57,7 +57,6 @@ class LoginForm extends Component {
   render() {
     return (
       <View>
-        <Header>Job Manager</Header>
         <Card>
           <CardSection>
             <Input

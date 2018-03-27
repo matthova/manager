@@ -13,6 +13,8 @@ const styles = {
   },
 };
 
-const CardSection = ({ children }) => <View style={styles.containerStyle}>{children}</View>;
+const CardSection = ({ children, style }) => (
+  <View style={{ ...styles.containerStyle, ...style }}>{children}</View>
+);
 
 export { CardSection };

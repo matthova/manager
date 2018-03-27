@@ -25,9 +25,9 @@ class App extends Component {
 
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log('got a user');
+        // console.log('got a user');
       } else {
-        console.log('nope');
+        // console.log('nope');
       }
     });
   }
