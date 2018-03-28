@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 import autobind from 'react-autobind';
+import Communications from 'react-native-communications';
 
 import { employeeUpdate, employeeSave } from '../actions';
 
@@ -31,12 +32,21 @@ class EmployeeEdit extends Component {
     });
   }
 
+  onTextPress() {
+    const { phone, shift } = this.props;
+
+    Communications.text(phone, `Your upcoming shift is on ${shift}`);
+  }
+
   render() {
     return (
       <Card>
         <EmployeeForm />
         <CardSection>
           <Button onPress={this.onButtonPress}>Save Changes</Button>
+        </CardSection>
+        <CardSection>
+          <Button onPress={this.onTextPress}>Text Schedule</Button>
         </CardSection>
       </Card>
     );
