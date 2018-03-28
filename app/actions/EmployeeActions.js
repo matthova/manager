@@ -64,3 +64,15 @@ export const employeeSave = ({
       Actions.employeeList({ type: 'reset' });
     });
 };
+
+export const employeeDelete = ({ uid }) => (dispatch) => {
+  const { currentUser } = firebase.auth();
+
+  firebase
+    .database()
+    .ref(`/users/${currentUser.uid}/employees/${uid}`)
+    .remove()
+    .then(() => {
+      Actions.employeeList({ type: 'reset' });
+    });
+};
