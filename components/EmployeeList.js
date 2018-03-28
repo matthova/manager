@@ -35,11 +35,8 @@ class EmployeeList extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log('da state', state);
-  return {
-    employees: _.map(state.employees, (val, uid) => ({ ...val, uid })),
-  };
-};
+const mapStateToProps = state => ({
+  employees: _.map(state.employees, (val, uid) => ({ ...val, uid })),
+});
 
 export default connect(mapStateToProps, { employeesFetch })(EmployeeList);
